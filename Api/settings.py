@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
+
 
 # Application definition
 
@@ -187,7 +187,10 @@ CORS_ORIGIN_WHITELIST = (
     BackEndUrl,
 
 )
-
+ALLOWED_HOSTS = [
+    FrontEndUrl,
+    BackEndUrl,
+]
 SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(days=90),
     'REFRESH_TOKEN_LIFETIME': timedelta(days=90),
