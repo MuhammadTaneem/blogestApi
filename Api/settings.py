@@ -177,10 +177,15 @@ CORS_ORIGIN_ALLOW_ALL = False
 
 CORS_ORIGIN_WHITELIST = (
     'https://blogest-blogest.web.app',
+    # 'http://localhost:4200',
+
+
 
 )
 ALLOWED_HOSTS = [
-   # '127.0.0.1',
+    # '127.0.0.1',
+    # 'localhost',
+    'blogest-blogest.web.app',
     'blogestapi.herokuapp.com',
 
 ]
