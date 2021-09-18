@@ -123,20 +123,15 @@ import os
 from decouple import config
 from datetime import timedelta
 
-FrontEndUrl = config('FRONT_END_URL')
-BacktEndUrl = config('BACK_END_URL')
 SECRET_KEY = config('SECRET_KEY')
 email = config('EMAIL')
 email_pass = config('EMAIL_PASS')
 
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'djoser',
-        'USER': 'postgres',
-        'PASSWORD': '1234',
-        'HOST': '127.0.0.1',
-        'PORT': '5432',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
@@ -184,13 +179,13 @@ REST_FRAMEWORK = {
 CORS_ORIGIN_ALLOW_ALL = False
 
 CORS_ORIGIN_WHITELIST = (
-    FrontEndUrl,
-    # 'http://localhost:4200',
+    'http://localhost:8000',
+    'http://localhost:4200',
 
 )
 ALLOWED_HOSTS = [
    # '127.0.0.1',
-    BacktEndUrl
+    'blogestapi.herokuapp.com'
 
 ]
 SIMPLE_JWT = {
