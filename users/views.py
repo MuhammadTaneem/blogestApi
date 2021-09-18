@@ -4,7 +4,7 @@ from .serializers import UserDetailSerializer
 from .permissions import AuthorOrReadOnly
 from rest_framework import permissions
 from djoser.views import UserViewSet
-FrontEndUrl = 'http://localhost:4200'
+FrontEndUrl = 'https://blogest-blogest.web.app/'
 
 
 class UserViewSet(UserViewSet):

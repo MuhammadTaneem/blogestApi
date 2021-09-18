@@ -120,12 +120,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # ------------------------------------- custom setting code  ------------------------
 
 import os
-from decouple import config
 from datetime import timedelta
 
-SECRET_KEY = config('SECRET_KEY')
-email = config('EMAIL')
-email_pass = config('EMAIL_PASS')
+SECRET_KEY ='adsffffffffffasdfdsaf%^&^*(*&&$^%%##$$%^&*&*(&*(dsafasdfdsaf121325243643sdaf'
 
 
 DATABASES = {
@@ -140,8 +137,8 @@ AUTH_USER_MODEL = 'users.User'
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = DEFAULT_FROM_EMAIL = email
-EMAIL_HOST_PASSWORD = email_pass
+EMAIL_HOST_USER = DEFAULT_FROM_EMAIL = 'famouswebdeveloper@gmail.com'
+EMAIL_HOST_PASSWORD = 'taneem1122'
 
 WHITENOISE_USE_FINDERS = True
 STATIC_URL = '/static/'
@@ -179,8 +176,7 @@ REST_FRAMEWORK = {
 CORS_ORIGIN_ALLOW_ALL = False
 
 CORS_ORIGIN_WHITELIST = (
-    'http://localhost:8000',
-    'http://localhost:4200',
+    'https://blogest-blogest.web.app/'
 
 )
 ALLOWED_HOSTS = [
