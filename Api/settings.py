@@ -173,20 +173,20 @@ REST_FRAMEWORK = {
 
 }
 
-CORS_ORIGIN_ALLOW_ALL = False
+CORS_ORIGIN_ALLOW_ALL = True
 
-CORS_ORIGIN_WHITELIST = (
-    'https://blogest-blogest.web.app',
-    # 'http://localhost:4200',
-
-
-
-)
+# CORS_ORIGIN_WHITELIST = (
+#     'https://blogest-blogest.web.app',
+#     'https://blogestapi.herokuapp.com',
+#
+#     # 'http://localhost:4200',
+# )
 ALLOWED_HOSTS = [
+    "*"
     # '127.0.0.1',
     # 'localhost',
-    'blogest-blogest.web.app',
-    'blogestapi.herokuapp.com',
+    # 'blogest-blogest.web.app',
+    # 'blogestapi.herokuapp.com',
 
 ]
 SIMPLE_JWT = {
