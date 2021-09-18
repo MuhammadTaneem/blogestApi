@@ -4,9 +4,10 @@ from .serializers import UserDetailSerializer
 from .permissions import AuthorOrReadOnly
 from rest_framework import permissions
 from djoser.views import UserViewSet
-import os
+from decouple import config
 
-FrontEndUrl = os.environ.get('FRONT_END_URL')
+
+FrontEndUrl = config('FRONT_END_URL')
 
 
 class UserViewSet(UserViewSet):

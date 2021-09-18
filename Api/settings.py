@@ -23,8 +23,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -122,14 +120,14 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # ------------------------------------- custom setting code  ------------------------
 
 import os
+from decouple import config
 from datetime import timedelta
 
-FrontEndUrl = os.environ.get('FRONT_END_URL')
-BackEndUrl = os.environ.get('BACK_END_URL')
-SECRET_KEY = os.environ.get ('SECRET_KEY')
-email = os.environ.get ('EMAIL')
-email_pass = os.environ.get ('EMAIL_PASS')
-
+FrontEndUrl = config('FRONT_END_URL')
+BacktEndUrl = config('BACK_END_URL')
+SECRET_KEY = config('SECRET_KEY')
+email = config('EMAIL')
+email_pass = config('EMAIL_PASS')
 
 DATABASES = {
     'default': {
@@ -147,11 +145,13 @@ AUTH_USER_MODEL = 'users.User'
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = DEFAULT_FROM_EMAIL =email
+EMAIL_HOST_USER = DEFAULT_FROM_EMAIL = email
 EMAIL_HOST_PASSWORD = email_pass
 
+WHITENOISE_USE_FINDERS = True
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
@@ -182,14 +182,16 @@ REST_FRAMEWORK = {
 }
 
 CORS_ORIGIN_ALLOW_ALL = False
+
 CORS_ORIGIN_WHITELIST = (
     FrontEndUrl,
-    BackEndUrl,
+    # 'http://localhost:4200',
 
 )
 ALLOWED_HOSTS = [
-    FrontEndUrl,
-    BackEndUrl,
+   # '127.0.0.1',
+    BacktEndUrl
+
 ]
 SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(days=90),
