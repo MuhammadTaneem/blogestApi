@@ -181,14 +181,14 @@ REST_FRAMEWORK = {
 
 }
 
-CORS_ORIGIN_ALLOW_ALL = False
+CORS_ORIGIN_ALLOW_ALL = True
 
-CORS_ORIGIN_WHITELIST = (
-    FrontEndUrl,
-    BacktEndUrl,
-    # 'http://localhost:4200',
+# CORS_ORIGIN_WHITELIST = (
+#     FrontEndUrl,
+#     BacktEndUrl,
+#     # 'http://localhost:4200',
 
-)
+# )
 ALLOWED_HOSTS = [
    # '127.0.0.1',
     BacktEndUrl
