@@ -4,7 +4,7 @@ from djoser.serializers import UserCreateSerializer
 
 
 class UserSerializer(UserCreateSerializer):
-    class Meta(UserCreateSerializer.Meta):
+    class Meta:
         model = User
         fields = "__all__"
 
